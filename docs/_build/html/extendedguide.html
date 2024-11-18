@@ -1,0 +1,664 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Examples" href="examples.html" /><link rel="prev" title="Quick Start Guide" href="quickstart.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Extended Guide - Simulation of Stationary Energy Storage Systems documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Simulation of Stationary Energy Storage Systems  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/SimSES_Logo_black.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Simulation of Stationary Energy Storage Systems  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aboutsimses.html">About SimSES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Extended Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic structure of SimSES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simbas.html">Usage of SimSES in SimBAS</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources &amp; Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="papers.html">Featured Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="extended-guide">
+<span id="ref-to-extended"></span><h1>Extended Guide<a class="headerlink" href="#extended-guide" title="Link to this heading">#</a></h1>
+<section id="create-a-virtual-environment">
+<span id="ref-to-anaconda"></span><h2>1 Create a Virtual Environment<a class="headerlink" href="#create-a-virtual-environment" title="Link to this heading">#</a></h2>
+<p>It is recommended to install SimSES and third-party Python packages in a virtual environment isolated from the system Python distribution using Anaconda.
+The Anaconda interpreter can be integrated into the IDE such as PyCharm and VS Code to optimize the development environment for your projects.
+The following steps are necessary:</p>
+<ol class="arabic simple">
+<li><p>Get Anaconda <a class="reference external" href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a>.</p></li>
+<li><p>Create a new environment in Anaconda:</p></li>
+</ol>
+<p>To create a virtual environment for SimSES in <strong>Anaconda Navigator</strong> proceed with the following steps.
+A more detailed documentation about
+virtual environments and how to create them can be found in <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html</a>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>run Anaconda</p></li>
+<li><p>click <strong>Environments</strong></p></li>
+<li><p>click <strong>Create</strong></p></li>
+<li><p>name the new environment (i.e. SimSES) and choose a Python version ≥ Python 3.8</p></li>
+<li><p>after confirming creating a new environment wait until all packages are loaded</p></li>
+<li><p>click on <strong>Play button</strong> and <strong>Open Terminal</strong> to install dependencies in the created virtual environment</p></li>
+</ul>
+</div></blockquote>
+<p>Alternatively, the new environment can be activated in a terminal by calling the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">new</span> <span class="n">environment</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>3.Install dependencies.
+The following packages are required for SimSES:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>scipy</p></li>
+<li><p>numpy</p></li>
+<li><p>numpy_financial</p></li>
+<li><p>pandas</p></li>
+<li><p>plotly</p></li>
+<li><p>matplotlib</p></li>
+<li><p>pytz</p></li>
+</ul>
+</div></blockquote>
+<p>Install the packages using pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span><span class="o">-</span><span class="n">financial</span> <span class="n">scipy</span> <span class="n">numpy</span> <span class="n">plotly</span> <span class="n">matplotlib</span> <span class="n">pytest</span> <span class="n">pytz</span>
+</pre></div>
+</div>
+<p>After all packages have been installed you can close Anaconda.</p>
+</section>
+<section id="modify-the-simulation-file">
+<span id="ref-to-modify-simulation"></span><h2>2 Modify the Simulation File<a class="headerlink" href="#modify-the-simulation-file" title="Link to this heading">#</a></h2>
+<p>In the <em>simulation.local.ini</em> file, the following options are available for customization:</p>
+<dl class="simple">
+<dt><strong>Section: GENERAL:</strong></dt><dd><ul class="simple">
+<li><p><cite>START</cite>: Format: YYYY-MM-DD HH:MM:SS - Specifies the start time of the simulation.</p></li>
+<li><p><cite>END</cite>: Format: YYYY-MM-DD HH:MM:SS - Determines the end time of the simulation.</p></li>
+<li><p>The duration of the simulation must align with the duration of the data profiles used.</p></li>
+<li><p><cite>TIME_STEP</cite>: The time step of the simulation in seconds, e.g. 1.</p></li>
+<li><p><cite>LOOP</cite>: The number of simulation cycles.</p></li>
+</ul>
+</dd>
+</dl>
+<p>—</p>
+<p><strong>Section: ENERGY MANAGEMENT:</strong>
+In this section, the operation strategy is defined, which can be either Single Use or Multi Use.
+Please note that the necessity of these parameters varies depending on the selected operation strategy
+and the specifics of the application case. Not every parameter must be filled out for each scenario.
+For instance, FCR_RESERVE may not be relevant for scenarios focused purely on EV charging.
+However, at least one of the available strategies must be selected for the simulation to proceed.
+Also, ensure that the load, generation, and technical profiles match the requirements of the chosen strategy.</p>
+<p><strong>Available Strategies in ENERGY MANAGEMENT Section:</strong></p>
+<ul class="simple">
+<li><p><strong>PowerFollower</strong>: Simulates an AC power profile with the storage system, aiming to match the specified power profile.</p></li>
+<li><p><strong>SOCFollower</strong>: Attempts to follow a specified State-of-Charge profile with the storage system.</p></li>
+<li><p><strong>ResidentialPvGreedy</strong>: For residential storage with a PV system, employing a greedy strategy. The storage is charged whenever there’s surplus generation from the PV.</p></li>
+<li><p><strong>ResidentialPvFeedInDamp</strong>: Simulates residential storage with a PV system using a feed-in damp strategy, where the storage is charged one hour before sunset.</p></li>
+<li><dl class="simple">
+<dt><strong>IntradayMarketRecharge</strong>: Simulates recharging based on the intraday market.</dt><dd><ul>
+<li><p><cite>POWER_IDM</cite>: Specifies the power available for IDM recharge in watts.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>SimplePeakShaving</strong>: Aims to reduce peak load.</dt><dd><ul>
+<li><p><cite>MAX_POWER</cite>: Sets the peak-shaving limit for the entire year in watts.</p></li>
+<li><p><cite>MAX_POWER_MONTHLY</cite>: Defines monthly peak-shaving limits in watts. The first value is for January, the second for February, and so on.</p></li>
+<li><p><cite>MAX_POWER_MONTHLY_MODE</cite>: When set to True, uses the monthly peak-shaving limits from <cite>MAX_POWER_MONTHLY</cite>. If False, <cite>MAX_POWER</cite> is used as the limit for the entire simulation.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>PeakShavingPerfectForesight</strong>: Reduces peak load with perfect foresight of the load profile, maintaining a low SOC to minimize calendar aging.</dt><dd><ul>
+<li><p><cite>MAX_POWER</cite>: Sets the yearly peak-shaving limit in watts.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>FrequencyContainmentReserve (FCR)</strong>: Participates in the FCR market without recharging. Adheres to German regulations.</dt><dd><ul>
+<li><p><cite>POWER_FCR</cite>: Power offered to the FCR market in watts.</p></li>
+<li><p><cite>SOC_SET</cite>: Target SOC for FCR simulations.</p></li>
+<li><p><cite>FCR_RESERVE</cite>: Full power reserve for alert state in hours, defaulting to 0.25 (15-minute criterion).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>FcrIdmRechargeStacked</strong>: A multi-use strategy for FCR market participation with IDM recharge.</dt><dd><ul>
+<li><p><cite>POWER_IDM</cite>: Power available for Intraday Market participation in watts.</p></li>
+<li><p><cite>AUTOMATED_FCR_IDM_ALLOCATION</cite>: Enables automated power allocation for FCR with IDM recharge according to current German TSO requirements.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>ElectricVehicle</strong>: Simulates the load on EV batteries during driving and recharges using a power profile and a binary profile.</dt><dd><ul>
+<li><p><cite>EV_CHARGING_STRATEGY</cite>: Selects the charging strategy, such as Uncontrolled.</p></li>
+<li><p><cite>MAX_POWER</cite>: Sets the maximum AC charging power in watts.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>ElectricVehicleSOC</strong>: Simulates the load on EV batteries during driving and recharges using an SOC profile and a binary profile.</dt><dd><ul>
+<li><p><cite>EV_CHARGING_STRATEGY</cite>: Options include Original, Uncontrolled, Mean_power, Paused.</p></li>
+<li><p><cite>MAX_POWER</cite>: Maximum AC charging power in watts.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>EvChargerWithBuffer</strong>: Simulates buffer storage for EV charging stations.</dt><dd><ul>
+<li><p><cite>MAX_POWER</cite>: Maximum AC grid power in watts.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>SOC Limits</strong>: <cite>MIN_SOC</cite> and <cite>MAX_SOC</cite> in p.u [0,1[ and ]0,1] respectively, set the lower and upper SOC limits of the storage system. Adjust these values if the technology’s SOC range differs from [0;1].</p>
+<p><strong>Storage Technology:</strong></p>
+<p>Available storage technologies within the system include batteries, redox-flow cells, and hydrogen-based systems which encompass both electrolyzers for hydrogen production and fuel cells for energy conversion.</p>
+<dl class="simple">
+<dt>For these technologies, you can define various parameters such as:</dt><dd><ul class="simple">
+<li><p><cite>MIN_SOC</cite>: x.x [Number between 0.0 and 1.0 indicating the minimum state of charge]</p></li>
+<li><p><cite>MAX_SOC</cite>: x.x [Number between 0.0 and 1.0 indicating the maximum state of charge]</p></li>
+<li><p><cite>EOL</cite>: x.x [Number between 0.0 and 1.0 indicating the end of life criteria]</p></li>
+<li><p><cite>START_SOH</cite>: x.x [Number between 0.0 and 1.0 indicating the initial state of health]</p></li>
+<li><p>Other parameters like START_SOH_SHARE, START_RESISTANCE_INC, and EXACT_SIZE can be set to [True/False], alongside PRESSURE_CATHODE, PRESSURE_ANODE, and TEMPERATURE.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Please remember that not every parameter is applicable to all storage technologies.</p>
+<p>—</p>
+<p><strong>Section: STORAGE SYSTEM:</strong></p>
+<p>In this section the structural framework of the storage system will be established by detailing the AC-DC system topology,
+as well as the housing and HVAC setup.
+Each storage system must include a minimum of one AC storage system paired with a corresponding AC-DC converter.
+One AC storage system can be connected to multiple DC storage systems and must be connected to at least one DC system.
+When configuring, ensure that the names you choose for the ACDC converter, housing, HVAC system, DCDC converter and storage technology are consistent with the definitions provided
+in later sections of your configuration document.
+These names serve as identifiers that link the physical components of the storage system to their operational characteristics within the simulation environment.
+For the respective types such as converter type or housing type, a name that aligns with one of the listed
+types available in the configuration options must be selected.
+This name matching is critical to ensure that the selected converter’s specifications are recognized by the system.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>STORAGE_SYSTEM_AC</strong>: format:</dt><dd><ul>
+<li><p><cite>AC-system name, max AC power in W, DC voltage level in V, ACDC converter name, housing name, HVAC name</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>ACDC_CONVERTER</strong>: format:</dt><dd><ul>
+<li><p><cite>ACDC Converter name, converter type, [optional: number of converters]</cite></p></li>
+<li><p>ACDC converter types available for selection: <cite>NottonAcDcConverter</cite>, <cite>FixEfficiencyAcDcConverter</cite>, (additional types: <cite>BonfiglioliAcDcConverter</cite>, <cite>Sinamics120AcDcConverter</cite>, <cite>SungrowAcDcConverter</cite>, <cite>M2bAcDcConverter</cite>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>HOUSING</strong>: format:</dt><dd><ul>
+<li><p><cite>housing name, housing type, [optional: high cube [True/False], housing azimuth in °, housing absorptivity, ground albedo]</cite></p></li>
+<li><p>Available options for housing type are: <cite>NoHousing</cite>, <cite>TwentyFtContainer</cite>, <cite>FortyFtContainer</cite>.</p></li>
+<li><p>Default values for the optional parameters are <cite>False</cite> for high cube, <cite>0</cite> for azimuth, <cite>0.15</cite> for absorptivity, and <cite>0.2</cite> for ground albedo.</p></li>
+<li><p>If you want to set specific optional parameters while leaving others at their default values, only fill in the fields you wish to change.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>HVAC</strong>: format:</dt><dd><ul>
+<li><p><cite>HVAC system name, HVAC system type, [optional: heating/cooling power in W, set-point temperature in °C]</cite></p></li>
+<li><p>HVAC system type options: <cite>NoHeatingVentilationAirConditioning</cite> or <cite>FixCOPHeatingVentilationAirConditioning</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>STORAGE_SYSTEM_DC</strong>: format:</dt><dd><ul>
+<li><p><cite>AC-system name, DCDC converter name, storage technology name</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>DCDC_CONVERTER</strong>: format:</dt><dd><ul>
+<li><p><cite>DCDC converter name, converter type, power in W, [optional: Efficiency in p.u.]</cite></p></li>
+<li><p>Available DCDC converter types: <cite>NoLossDcDcConverter</cite>, <cite>FixEfficiencyDcDcConverter</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>STORAGE_TECHNOLOGY</strong>: format:</dt><dd><ul>
+<li><p><cite>storage technology name, energy in Wh, technology type, [optional: technology specific parameters]</cite></p></li>
+<li><p>Lithium-ion: Select from cell types: <cite>SonyLFP, LTOLMO, LTONMC, PanasonicNCA, MolicelNMC, AkasolAkmNMC, AkasolOemNMC, SanyoNMC, GenericCell, Samsung78AhNMC, DaimlerLMO, Samsung94AhNMC, Samsung94AhNMCLabtests, Samsung94AhNMCHybrid, Samsung120AhNMC, LGMJ1_NMC</cite></p></li>
+<li><p>Optionally, set the Start SOC and Start SOH for these cells. For a GenericCell, it’s possible to configure the degradation model in the [BATTERY] section.</p></li>
+<li><p>Redox-Flow: Specify the stack type and nominal power of the stack module, with an optional pump algorithm.</p></li>
+<li><p>Available cell stack types are <cite>CellDataStack5500W, DummyStack3000W, IndustrialStack1500W</cite>.</p></li>
+<li><dl class="simple">
+<dt>Hydrogen: This type encompasses the entire hydrogen energy chain, including fuel cells, electrolyzers, and storage components. Specification options:</dt><dd><ul>
+<li><p>fuel_cell: Choose from types <cite>PemFuelCell, JupiterFuelCell</cite>.</p></li>
+<li><p>fuel_cell_nominal_power: The nominal power output of the fuel cell.</p></li>
+<li><p>electrolyzer: Types are <cite>PemElectrolyzerMultiDimAnalytic, PemElectrolyzer, AlkalineElectrolyzer</cite>.</p></li>
+<li><p>electrolyzer_nominal_power: The nominal power rating of the electrolyzer.</p></li>
+<li><p>storage: Available types of hydrogen storage <cite>PressureTank, SimplePipeline</cite>.</p></li>
+<li><p>max_pressure: The maximum pressure for hydrogen storage.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>—</p>
+<p>Configuration of power distributor logic between AC systems as well as between DC systems.
+Available distribution options: <cite>EqualPowerDistributor, SocBasedPowerDistributor</cite>.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Temperature:</strong> Temperature setting can be specified in this section. If no temperature is specified, the default value is 25 °C.</dt><dd><ul>
+<li><p>AMBIENT_TEMPERATURE_MODEL: format:</p></li>
+<li><p><cite>model type [ConstantAmbientTemperature/ UserDefinedTemperatureValue/ LocationAmbientTemperature], temperature in °C</cite></p></li>
+<li><p>If you opt for <cite>LocationAmbientTemperature</cite>, the default location set is Berlin, but you can define a different one if necessary.</p></li>
+<li><p>For <cite>UserDefinedTemperatureValue</cite>, input your desired temperature.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>SOLAR_IRRADIATION_MODEL:</strong></dt><dd><ul>
+<li><p>Available options: <cite>NoSolarIrradiationModel, LocationSolarIrradiationModel</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>THERMAL_SIMULATION:</strong></dt><dd><ul>
+<li><p>If False: NoHeatingVentilationAirConditioning and NoHousing must be selected</p></li>
+<li><p>If True: supports all Housing, HVAC, Ambient Temperature, and Solar Irradiation (LocationSolarIrradiationModel incompatible with NoHousing)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>CYCLE_DETECTOR:</strong></dt><dd><ul>
+<li><p>Available options: <cite>RainflowCycleDetector, NoCycleDetector, HalfCycleDetector</cite></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>—</p>
+<p><strong>Section: PROFILE</strong></p>
+<p>The following types of profiles are available. The user can also upload own data (see <a class="reference internal" href="#ref-to-profiles"><span class="std std-ref">3 Supply own Profile Files</span></a>).</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Power profiles:</strong></dt><dd><ul>
+<li><p>LOAD_PROFILE = name of your load profile in the specified path</p></li>
+<li><p>Random Profile generates a profile for plug and play simulations</p></li>
+<li><p>GENERATION_PROFILE = name of your PV generation profile in the specified path</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Technical profiles:</strong></dt><dd><ul>
+<li><p>FREQUENCY_PROFILE = name of your frequency profile in the specified path</p></li>
+<li><p>SOC_PROFILE = name of your Soc profile in the specified path</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Thermal profiles:</strong></dt><dd><ul>
+<li><p>AMBIENT_TEMPERATURE_PROFILE = name of your location ambient temperature profile in the specified path</p></li>
+<li><p>GLOBAL_HORIZONTAL_IRRADIATION_PROFILE = name of your location GHI profile in the specified path</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Scaling:</strong></dt><dd><ul>
+<li><p>LOAD_PROFILE_SCALING = The input load profile is scaled to energy or power or no scaling at all (False)</p></li>
+<li><p>LOAD_SCALING_FACTOR = If LOAD_PROFILE_SCALING = Energy –&gt; Annual energy in Wh</p></li>
+<li><p>LOAD_SCALING_FACTOR = If LOAD_PROFILE_SCALING = Power –&gt; Peak power in W</p></li>
+<li><p>GENERATION_PROFILE_SCALING = The generation profile is scaled to power or no scaling at all (False)</p></li>
+<li><p>GENERATION_SCALING_FACTOR = If GENERATION_PROFILE_SCALING = Power –&gt; Peak power in W</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="supply-own-profile-files">
+<span id="ref-to-profiles"></span><h2>3 Supply own Profile Files<a class="headerlink" href="#supply-own-profile-files" title="Link to this heading">#</a></h2>
+<p>Users have the option to upload their own profile files. An example could be load or generation profiles, such as those for photovoltaic (PV) systems.
+In the absence of user-uploaded profiles, example files provided by SimSES are available for use.</p>
+<p>The <em>simulation.ini</em> file allows for the uploading of three distinct types of profiles: <em>power</em>, <em>technical</em>, and <em>thermal</em>.
+Additionally, the <em>analysis.ini</em> file supports the uploading of a <em>market profile</em>.</p>
+<p>For organization and accessibility, profiles used in simulations and analyses should be stored and categorized within the <em>simses\data\profile</em> directory.
+Each file must be placed in a folder that matches its type (for example, a Power Profile should be located in <em>“simses\data\profile\power”</em>.).
+Subsequently, these profiles need to be correctly referenced in the simulation or analysis configuration files.
+To do this, the filename should be updated in the <strong>[PROFILE]</strong> section of <em>simulation.local.ini</em> for simulation profiles, and in the <strong>[MARKET_PROFILE]</strong> section of <em>analysis.local.ini</em> for market profiles.</p>
+<dl class="simple">
+<dt>This is what an example for the Power Profile in the <em>simulation.local.ini</em> could look like:</dt><dd><ul class="simple">
+<li><p>section: [PROFILE]</p></li>
+<li><p>directory of the power profile: POWER_PROFILE_DIR = profile/power/</p></li>
+<li><p>specific power profile file: LOAD_PROFILE = <em>Name of the respective Power Profile</em></p></li>
+</ul>
+</dd>
+</dl>
+<section id="format-of-profile-files-in-simses">
+<h3>3.1 Format of Profile Files in SimSES<a class="headerlink" href="#format-of-profile-files-in-simses" title="Link to this heading">#</a></h3>
+<p>The supported formats for all types of profiles are either <em>.csv</em> or <em>.csv.gz</em>.
+For power profiles specifically, they must meet certain criteria to avoid errors during preprocessing:</p>
+<ol class="arabic simple">
+<li><p>The file is expected to present time series data in the first column and power values in the second column, with time represented in the “Unix-Timestamp” format.</p></li>
+<li><p>The sampling interval must match the <strong>TIME_STEP</strong> value set in the <strong>[GENERAL]</strong> section of the <em>simulation.local.ini</em> file.</p></li>
+<li><p>In cases where time series data are not provided, the system will generate them based on the start time and time step defined in the simulation configuration.</p></li>
+<li><p>The file must include a header within the first twenty lines. The header must contain the unit of the power [W].</p></li>
+</ol>
+</section>
+</section>
+<section id="results">
+<h2>4 Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
+<p>Apart from the HTML file, SimSES creates multiple files in the respective folder. These files are:</p>
+<ol class="arabic simple">
+<li><p>Generated <em>csv</em> files to record simulation: <em>SystemState.csv</em>, <em>EnergyManagementState.csv</em> and <em>LithiumIonState.csv</em></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <em>SystemState.csv</em> provides an overview of the power management system such as the AC and DC power, the temperature (i.e. ambient temperature), different kinds of power losses, thermal power (i.e. of the HVAC) and many more</p></li>
+<li><p>The EnergyManagementState.csv file delivers insights into the power dynamics controlled by the Energy Management System (EMS). It records the demand for power, the availability of electric vehicles (EVs) for charging, reserves set aside for Frequency Containment Reserve (FCR), and the defined limits for peak shaving. Additional data encompasses photovoltaic (PV) power generation and corresponding timestamps.</p></li>
+<li><p>The LithiumIonState.csv file is captures the performance characteristics of the lithium-ion battery system. It includes metrics on total capacity, degradation impacts on capacity over time, electric current, internal resistance, voltage, state of health, temperature, and time. It also provides the open-circuit voltage and further details pertinent to battery state analysis.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><em>csv</em> files containing evaluation results generated after simulation: <em>SystemTechnicalEvaluation0.0.csv</em>, <em>SiteLevelEvaluation0.0.csv</em>, <em>EconomicEvaluation0.0.csv</em>, <em>LithiumIonTechnicalEvaluation1.1.csv</em></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <em>SystemTechnicalEvaluation0.0.csv</em> contains information such as the round trip efficiency, max/min/mean state of charge, AC/DC charging/discharging efficiency and other information</p></li>
+<li><p>The  <em>SiteLevelEvaluation0.0.csv</em> refers to data such as maximum grid power, self-consumption-rate, self-sufficiency-rate and more</p></li>
+<li><p>The <em>EconomicEvaluation0.0.csv</em> contains the investment cost, NPV, ROI, Profitability Index, Levelized Cost of Storage and more</p></li>
+<li><p>The <em>LithiumIonTechnicalEvaluation1.1.csv</em> contains information on the round trip efficiency, max/min/mean state of charge, energy throughput, full equivalent circles and more</p></li>
+</ul>
+</div></blockquote>
+<p>Please note that the information generated by SimSES depends on the use case.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="examples.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Examples</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="quickstart.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Quick Start Guide</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Technical University of Munich, Chair of Electrical Energy Storage Technology
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Extended Guide</a><ul>
+<li><a class="reference internal" href="#create-a-virtual-environment">1 Create a Virtual Environment</a></li>
+<li><a class="reference internal" href="#modify-the-simulation-file">2 Modify the Simulation File</a></li>
+<li><a class="reference internal" href="#supply-own-profile-files">3 Supply own Profile Files</a><ul>
+<li><a class="reference internal" href="#format-of-profile-files-in-simses">3.1 Format of Profile Files in SimSES</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#results">4 Results</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

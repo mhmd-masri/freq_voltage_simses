@@ -1,0 +1,408 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="FAQs" href="faqs.html" /><link rel="prev" title="Usage of SimSES in SimBAS" href="simbas.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Applications - Simulation of Stationary Energy Storage Systems documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Simulation of Stationary Energy Storage Systems  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/SimSES_Logo_black.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Simulation of Stationary Energy Storage Systems  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aboutsimses.html">About SimSES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extendedguide.html">Extended Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basic structure of SimSES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simbas.html">Usage of SimSES in SimBAS</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Applications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources &amp; Support</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="papers.html">Featured Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="applications">
+<span id="ref-to-applications"></span><h1>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h1>
+<p>In general, applications for SimSES are distinguished between Front-of-the-Meter (FTM) and Behind-the-Meter (BTM) applications.
+FTM applications include solutions like Frequency Containment Reserve (FCR), storage-assisted renewable energy time shift,
+and participation in the intraday continuous market. BTM applications focus on more distributed and locally coordinated power supply strategies,
+such as peak shaving for industrial applications or at electric vehicle charging stations, and bill-saving at residential sites through increased self-consumption with local photovoltaic generation (residential battery storage).
+For the self-consumption increase scenario, two distinct strategies are identified: “Residential PV Greedy” and “Residential PV Feed-in Damp.”
+Additionally, applications designed for validation purposes have been implemented, including the “Power Follower” and “State of Charge Follower” strategies.
+The following sections briefly explain each application.</p>
+<p>The Power Follower strategy is an operational approach designed to align the activity of a storage system with a predefined power profile. This strategy ensures that the storage system mimics a specific power output pattern over time.
+Similarly, the State of Charge Follower strategy transforms a set SOC profile into a corresponding power output profile, with the objective of having the storage system match this derived power demand at every time step.</p>
+<section id="frequency-regulation">
+<h2>Frequency Regulation<a class="headerlink" href="#frequency-regulation" title="Link to this heading">#</a></h2>
+<p>Frequency Containment Reserve is a critical service in power system management designed to counteract deviations in the system frequency.
+FCR responds to frequency changes by requiring full activation within 30 seconds and must be provided symmetrically,
+i.e. there’s no distinction between positive and negative FCR. Activation is frequency dependent,
+with suppliers measuring the grid frequency locally at the point of generation or consumption and responding immediately to any changes.
+This mechanism stops and stabilises frequency fluctuations, regardless of where in the European interconnected grid the deviation occurs.
+To restore the frequency to the standard 50 hertz and replace FCR, the Frequency Restoration Reserve is used in the control area causing the imbalance. The energy activated by the FCR contributes to the unintentional exchange and is settled monthly between the Transmission System Operators.</p>
+<p>In SimSES, FCR is implemented according to German regulatory criteria.
+The system adjusts the charging and discharging power in proportion to the frequency deviation.
+If the frequency falls below 49.8 Hz or rises above 50.2 Hz, the system delivers power at the pre-qualified level.
+Within a dead band around 50 Hz (plus/minus 10 mHz) the output power is set to 0 watts. The strategy includes the flexibility to exceed the output power by up to 20% to bring the state of charge back to a pre-defined set point.</p>
+<figure class="align-default" id="fcr-appl">
+<a class="reference internal image-reference" href="_images/FCR_expl.png"><img alt="_images/FCR_expl.png" src="_images/FCR_expl.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">Frequency Containment Reserve in European Countries</span><a class="headerlink" href="#fcr-appl" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="intraday-continuous-market">
+<h2>Intraday Continuous Market<a class="headerlink" href="#intraday-continuous-market" title="Link to this heading">#</a></h2>
+<p>The Intraday Continuous Market is an essential part of energy trading that complements
+the Day-Ahead Market. Intraday trading allows for the buying and selling of electricity on the same
+day as delivery, helping to balance supply and demand by allowing adjustments close to the time of energy
+consumption. This capability is increasingly vital with the growth of intermittent renewable energy sources,
+such as wind and solar, which can lead to unpredictable power outputs. The intraday market helps participants
+manage these fluctuations and maintain balance after the day-ahead market predictions have been realized.
+Intraday power trading is facilitated by exchanges like EPEX Spot in Paris and Nord Pool, where participants can trade electricity in real time, responding to changes in power production and consumption.</p>
+<p>The IDM operation strategy in SimSES involves charging or discharging the ESS by trading energy on the electricity market,
+specifically on the IDM, based on whether the SOC falls below a predefined lower limit or exceeds an upper limit.</p>
+</section>
+<section id="peak-shaving">
+<h2>Peak-Shaving<a class="headerlink" href="#peak-shaving" title="Link to this heading">#</a></h2>
+<p>Peak Shaving (PS) is a strategy used by consumers to reduce their electricity consumption during periods of high demand
+to avoid causing a demand peak. This can be achieved through temporarily reducing production, activating on-site generation resources,
+or utilizing a battery storage system.
+Using self-generated electricity to offset a potential peak in demand helps in managing energy costs effectively,
+especially since charges are often based on the highest power peak recorded during a billing cycle (usually monthly or annually).</p>
+<p>Peak shaving is often used in industrial settings due to the significant cost implications associated with peak power demands.
+Industries often face substantial electricity costs that are not just based on the total energy consumed,
+but also on the maximum rate of power usage recorded during the billing period.
+This maximum rate, or peak load, can substantially increase utility bills because many electricity tariffs
+include demand charges, which are costs applied based on the highest level of power drawn during any interval
+in the billing cycle.</p>
+<p>In the context of SimSES, the Peak Shaving application is designed to mitigate high power demands from the distribution grid.
+This is economically beneficial as the highest power peak per billing period is multiplied by a power-related price;
+capping these peaks with an Energy Storage System (ESS) can lead to substantial cost savings.
+The system provides the necessary power from the ESS to keep demand below a critical threshold,
+thereby reducing the financial impact of peak power charges.</p>
+<p>1. The <strong>Simple Peak Shaving (PS) Strategy</strong> operates by maintaining power usage below a specified threshold.
+When the target power exceeds this threshold, the ESS supplies the required additional power.
+Conversely, when the power demand falls below this threshold, the ESS recharges.
+This strategy is particularly effective in managing energy costs and enhancing grid stability.</p>
+<p>2. A more advanced strategy called the <strong>PS Perfect Foresight Strategy</strong> assumes perfect knowledge
+of future load profiles. This strategy charges the ESS only with the amount of energy anticipated to be
+necessary for managing the next peak demand. This approach not only helps in effectively managing demand
+peaks but also minimizes the calendar aging of lithium-ion based ESS by reducing unnecessary charge cycles.
+By charging the ESS strategically just before anticipated demand peaks, this strategy ensures optimal use of
+the storage system, prolonging its lifespan and increasing efficiency.</p>
+<figure class="align-default" id="ps-appl">
+<a class="reference internal image-reference" href="_images/Peakshaving.png"><img alt="_images/Peakshaving.png" src="_images/Peakshaving.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">Peak Shaving Mechanism</span><a class="headerlink" href="#ps-appl" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="self-consumption-increase">
+<h2>Self-Consumption Increase<a class="headerlink" href="#self-consumption-increase" title="Link to this heading">#</a></h2>
+<p>Self-Consumption Increase (SCI) is a strategy aimed at increasing the use of energy produced by PV systems
+for personal consumption, rather than selling it back to the grid.
+This approach has become increasingly important as the financial benefits of selling energy have declined,
+making self-consumption more economically attractive. Key metrics for this strategy include the Self-Consumption Rate (SCR),
+which measures the proportion of PV-generated energy that is consumed on site, and the Self-Sufficiency Rate (SSR), which measures the proportion of total energy demand that is met by self-generation.</p>
+<p>In SimSES, two operational strategies have been implemented for residential SCI in combination with PV units:</p>
+<p>1. <strong>Residential PV Greedy Operation Strategy</strong>: This strategy prioritises charging the Energy Storage System (ESS)
+as quickly as possible when PV energy exceeds household demand, regardless of grid conditions.
+When PV generation is less than demand, the ESS is discharged to cover the shortfall.
+This approach generally achieves the highest SCR and SSR, resulting in significant cost savings.
+However, it can have a negative impact on the electrical grid due to high fluctuations in power flow, which can lead to grid congestion and voltage instability.
+In addition, frequent high states of charge (SOC) and high power throughput can accelerate battery ageing.</p>
+<p>2. <strong>Residential PV Feed-In Damp Operation Strategy</strong>: This method schedules ESS charging based on PV power
+forecasts and aims to maintain constant charging power, ideally fully charging the ESS by sunset.
+This strategy fills the storage one hour before sunset and limits power output based on remaining energy capacity and time to sunset.
+It results in longer battery life by avoiding high SOC levels and facilitates the integration of more solar installations by smoothing the power fed into the grid.
+By limiting potential excess PV generation, it reduces the likelihood of generating excess energy that the grid cannot absorb.Vehicle-to-Grid</p>
+<figure class="align-default" id="pv-appl">
+<a class="reference internal image-reference" href="_images/PV_HSS.png"><img alt="_images/PV_HSS.png" src="_images/PV_HSS.png" style="width: 243.5px; height: 272.5px;" /></a>
+<figcaption>
+<p><span class="caption-text">Usage of a Home Storage System with PV</span><a class="headerlink" href="#pv-appl" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="vehicle-to-grid">
+<h2>Vehicle-to-Grid<a class="headerlink" href="#vehicle-to-grid" title="Link to this heading">#</a></h2>
+<p>Vehicle-to-Grid (V2G) technology enables electric vehicles to interact with the power grid
+by allowing energy stored in the EV’s battery to be fed back into the grid.
+This capability can help manage energy demand, stabilize the grid, and facilitate the integration of
+renewable energy sources. V2G systems take advantage of bi-directional charging infrastructure,
+which allows EV batteries not only to charge from the grid but also to discharge energy back to it.
+The technology turns EVs into mobile energy storage units that can provide grid services, such as peak load shaving,
+frequency regulation, and emergency power supply.</p>
+<p>In the SimSES framework, V2G implementation is modeled by tracking the availability of EVs for charging and discharging
+using a binary profile, where ‘0’ means the EV is unavailable and ‘1’ indicates it is ready and connected to the grid.
+When available, SimSES simulates various charging strategies to assess V2G’s role in grid management,
+factoring in the intermittent presence of EVs to determine the system’s effectiveness and economic feasibility.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="faqs.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">FAQs</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="simbas.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Usage of SimSES in SimBAS</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Technical University of Munich, Chair of Electrical Energy Storage Technology
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Applications</a><ul>
+<li><a class="reference internal" href="#frequency-regulation">Frequency Regulation</a></li>
+<li><a class="reference internal" href="#intraday-continuous-market">Intraday Continuous Market</a></li>
+<li><a class="reference internal" href="#peak-shaving">Peak-Shaving</a></li>
+<li><a class="reference internal" href="#self-consumption-increase">Self-Consumption Increase</a></li>
+<li><a class="reference internal" href="#vehicle-to-grid">Vehicle-to-Grid</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

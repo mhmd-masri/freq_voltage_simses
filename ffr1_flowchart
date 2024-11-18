@@ -1,0 +1,16 @@
+// Flowchart for FFR1
+digraph FFR1 {
+	A [label=Start]
+	B [label="Frequency < 49.9 Hz?"]
+	C [label="Set t_start = time, Increment Counter"]
+	D [label="Time - t_start < 30s?"]
+	E [label="Calculate Power Output"]
+	F [label="Enter Recovery Phase (0 Power Output)"]
+	G [label="Reset Counter"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G
+}

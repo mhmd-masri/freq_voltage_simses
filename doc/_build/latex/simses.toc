@@ -1,0 +1,401 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction to SimSES}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Quickstart}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Download and Configure SimSES Project}{3}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Basic structure of SimSES}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Simulation Loop}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}Configuration}{4}{section.1.5}
+\contentsline {section}{\numberline {1.6}Contact}{4}{section.1.6}
+\contentsline {chapter}{\numberline {2}Code Structure of SimSES}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Commons}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}simses.commons package}{7}{subsection.2.1.1}
+\contentsline {subsubsection}{Subpackages}{7}{subsubsection*.3}
+\contentsline {paragraph}{simses.commons.config package}{7}{paragraph*.4}
+\contentsline {subparagraph}{Subpackages}{7}{subparagraph*.5}
+\contentsline {subparagraph}{simses.commons.config.analysis package}{7}{subparagraph*.6}
+\contentsline {subparagraph}{Submodules}{7}{subparagraph*.7}
+\contentsline {subparagraph}{Module contents}{11}{subparagraph*.84}
+\contentsline {subparagraph}{simses.commons.config.data package}{11}{subparagraph*.85}
+\contentsline {subparagraph}{Submodules}{11}{subparagraph*.86}
+\contentsline {subparagraph}{Module contents}{15}{subparagraph*.164}
+\contentsline {subparagraph}{simses.commons.config.generation package}{15}{subparagraph*.165}
+\contentsline {subparagraph}{Submodules}{15}{subparagraph*.166}
+\contentsline {subparagraph}{Module contents}{24}{subparagraph*.235}
+\contentsline {subparagraph}{simses.commons.config.simulation package}{24}{subparagraph*.236}
+\contentsline {subparagraph}{Submodules}{24}{subparagraph*.237}
+\contentsline {subparagraph}{Module contents}{34}{subparagraph*.450}
+\contentsline {subparagraph}{Submodules}{34}{subparagraph*.451}
+\contentsline {subparagraph}{Module contents}{35}{subparagraph*.467}
+\contentsline {paragraph}{simses.commons.cycle\_detection package}{35}{paragraph*.468}
+\contentsline {subparagraph}{Submodules}{35}{subparagraph*.469}
+\contentsline {subparagraph}{Module contents}{37}{subparagraph*.499}
+\contentsline {paragraph}{simses.commons.data package}{37}{paragraph*.500}
+\contentsline {subparagraph}{Submodules}{37}{subparagraph*.501}
+\contentsline {subparagraph}{Module contents}{38}{subparagraph*.526}
+\contentsline {paragraph}{simses.commons.profile package}{38}{paragraph*.527}
+\contentsline {subparagraph}{Subpackages}{38}{subparagraph*.528}
+\contentsline {subparagraph}{simses.commons.profile.economic package}{38}{subparagraph*.529}
+\contentsline {subparagraph}{Submodules}{39}{subparagraph*.530}
+\contentsline {subparagraph}{Module contents}{40}{subparagraph*.551}
+\contentsline {subparagraph}{simses.commons.profile.power package}{40}{subparagraph*.552}
+\contentsline {subparagraph}{Submodules}{40}{subparagraph*.553}
+\contentsline {subparagraph}{Module contents}{42}{subparagraph*.583}
+\contentsline {subparagraph}{simses.commons.profile.technical package}{42}{subparagraph*.584}
+\contentsline {subparagraph}{Submodules}{42}{subparagraph*.585}
+\contentsline {subparagraph}{Module contents}{42}{subparagraph*.597}
+\contentsline {subparagraph}{Submodules}{42}{subparagraph*.598}
+\contentsline {subparagraph}{Module contents}{45}{subparagraph*.617}
+\contentsline {paragraph}{simses.commons.state package}{45}{paragraph*.618}
+\contentsline {subparagraph}{Subpackages}{45}{subparagraph*.619}
+\contentsline {subparagraph}{simses.commons.state.technology package}{45}{subparagraph*.620}
+\contentsline {subparagraph}{Submodules}{45}{subparagraph*.621}
+\contentsline {subparagraph}{Module contents}{54}{subparagraph*.894}
+\contentsline {subparagraph}{Submodules}{54}{subparagraph*.895}
+\contentsline {subparagraph}{Module contents}{60}{subparagraph*.1000}
+\contentsline {paragraph}{simses.commons.test package}{60}{paragraph*.1001}
+\contentsline {subparagraph}{Submodules}{60}{subparagraph*.1002}
+\contentsline {subparagraph}{Module contents}{60}{subparagraph*.1017}
+\contentsline {paragraph}{simses.commons.timeseries package}{60}{paragraph*.1018}
+\contentsline {subparagraph}{Subpackages}{60}{subparagraph*.1019}
+\contentsline {subparagraph}{simses.commons.timeseries.average package}{60}{subparagraph*.1020}
+\contentsline {subparagraph}{Submodules}{60}{subparagraph*.1021}
+\contentsline {subparagraph}{Module contents}{61}{subparagraph*.1027}
+\contentsline {subparagraph}{simses.commons.timeseries.interpolation package}{61}{subparagraph*.1028}
+\contentsline {subparagraph}{Submodules}{61}{subparagraph*.1029}
+\contentsline {subparagraph}{Module contents}{62}{subparagraph*.1042}
+\contentsline {subparagraph}{Submodules}{62}{subparagraph*.1043}
+\contentsline {subparagraph}{Module contents}{62}{subparagraph*.1048}
+\contentsline {paragraph}{simses.commons.utils package}{62}{paragraph*.1049}
+\contentsline {subparagraph}{Submodules}{62}{subparagraph*.1050}
+\contentsline {subparagraph}{Module contents}{67}{subparagraph*.1081}
+\contentsline {subsubsection}{Submodules}{67}{subsubsection*.1082}
+\contentsline {subsubsection}{Module contents}{69}{subsubsection*.1135}
+\contentsline {section}{\numberline {2.2}Simulation}{69}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}simses.simulation package}{69}{subsection.2.2.1}
+\contentsline {subsubsection}{Subpackages}{69}{subsubsection*.1136}
+\contentsline {paragraph}{simses.simulation.case\_studies package}{69}{paragraph*.1137}
+\contentsline {subparagraph}{Subpackages}{69}{subparagraph*.1138}
+\contentsline {subparagraph}{simses.simulation.case\_studies.configs package}{69}{subparagraph*.1139}
+\contentsline {subparagraph}{Module contents}{69}{subparagraph*.1140}
+\contentsline {subparagraph}{Submodules}{69}{subparagraph*.1141}
+\contentsline {subparagraph}{Module contents}{70}{subparagraph*.1147}
+\contentsline {paragraph}{simses.simulation.system\_tests package}{70}{paragraph*.1148}
+\contentsline {subparagraph}{Subpackages}{70}{subparagraph*.1149}
+\contentsline {subparagraph}{simses.simulation.system\_tests.configs package}{70}{subparagraph*.1150}
+\contentsline {subparagraph}{Module contents}{70}{subparagraph*.1151}
+\contentsline {subparagraph}{Submodules}{70}{subparagraph*.1152}
+\contentsline {subparagraph}{Module contents}{70}{subparagraph*.1155}
+\contentsline {subsubsection}{Submodules}{70}{subsubsection*.1156}
+\contentsline {subsubsection}{Module contents}{72}{subsubsection*.1178}
+\contentsline {section}{\numberline {2.3}System}{72}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}simses.system package}{72}{subsection.2.3.1}
+\contentsline {subsubsection}{Subpackages}{72}{subsubsection*.1179}
+\contentsline {paragraph}{simses.system.auxiliary package}{72}{paragraph*.1180}
+\contentsline {subparagraph}{Subpackages}{72}{subparagraph*.1181}
+\contentsline {subparagraph}{simses.system.auxiliary.compression package}{72}{subparagraph*.1182}
+\contentsline {subparagraph}{Submodules}{72}{subparagraph*.1183}
+\contentsline {subparagraph}{Module contents}{73}{subparagraph*.1192}
+\contentsline {subparagraph}{simses.system.auxiliary.gas\_drying package}{73}{subparagraph*.1193}
+\contentsline {subparagraph}{Submodules}{73}{subparagraph*.1194}
+\contentsline {subparagraph}{Module contents}{73}{subparagraph*.1203}
+\contentsline {subparagraph}{simses.system.auxiliary.heating\_ventilation\_air\_conditioning package}{73}{subparagraph*.1204}
+\contentsline {subparagraph}{Submodules}{73}{subparagraph*.1205}
+\contentsline {subparagraph}{Module contents}{75}{subparagraph*.1255}
+\contentsline {subparagraph}{simses.system.auxiliary.pump package}{75}{subparagraph*.1256}
+\contentsline {subparagraph}{Submodules}{75}{subparagraph*.1257}
+\contentsline {subparagraph}{Module contents}{77}{subparagraph*.1282}
+\contentsline {subparagraph}{simses.system.auxiliary.water\_heating package}{77}{subparagraph*.1283}
+\contentsline {subparagraph}{Submodules}{77}{subparagraph*.1284}
+\contentsline {subparagraph}{Module contents}{77}{subparagraph*.1289}
+\contentsline {subparagraph}{Submodules}{77}{subparagraph*.1290}
+\contentsline {subparagraph}{Module contents}{78}{subparagraph*.1295}
+\contentsline {paragraph}{simses.system.dc\_coupling package}{78}{paragraph*.1296}
+\contentsline {subparagraph}{Subpackages}{78}{subparagraph*.1297}
+\contentsline {subparagraph}{simses.system.dc\_coupling.generation package}{78}{subparagraph*.1298}
+\contentsline {subparagraph}{Submodules}{78}{subparagraph*.1299}
+\contentsline {subparagraph}{Module contents}{79}{subparagraph*.1317}
+\contentsline {subparagraph}{simses.system.dc\_coupling.load package}{79}{subparagraph*.1318}
+\contentsline {subparagraph}{Submodules}{79}{subparagraph*.1319}
+\contentsline {subparagraph}{Module contents}{80}{subparagraph*.1355}
+\contentsline {subparagraph}{Submodules}{80}{subparagraph*.1356}
+\contentsline {subparagraph}{Module contents}{81}{subparagraph*.1370}
+\contentsline {paragraph}{simses.system.housing package}{81}{paragraph*.1371}
+\contentsline {subparagraph}{Submodules}{81}{subparagraph*.1372}
+\contentsline {subparagraph}{Module contents}{83}{subparagraph*.1425}
+\contentsline {paragraph}{simses.system.power\_electronics package}{83}{paragraph*.1426}
+\contentsline {subparagraph}{Subpackages}{83}{subparagraph*.1427}
+\contentsline {subparagraph}{simses.system.power\_electronics.acdc\_converter package}{83}{subparagraph*.1428}
+\contentsline {subparagraph}{Submodules}{83}{subparagraph*.1429}
+\contentsline {subparagraph}{Module contents}{88}{subparagraph*.1522}
+\contentsline {subparagraph}{simses.system.power\_electronics.dcdc\_converter package}{88}{subparagraph*.1523}
+\contentsline {subparagraph}{Submodules}{88}{subparagraph*.1524}
+\contentsline {subparagraph}{Module contents}{89}{subparagraph*.1564}
+\contentsline {subparagraph}{Submodules}{89}{subparagraph*.1565}
+\contentsline {subparagraph}{Module contents}{90}{subparagraph*.1575}
+\contentsline {paragraph}{simses.system.test package}{90}{paragraph*.1576}
+\contentsline {subparagraph}{Submodules}{90}{subparagraph*.1577}
+\contentsline {subparagraph}{Module contents}{92}{subparagraph*.1639}
+\contentsline {paragraph}{simses.system.thermal package}{92}{paragraph*.1640}
+\contentsline {subparagraph}{Subpackages}{92}{subparagraph*.1641}
+\contentsline {subparagraph}{simses.system.thermal.ambient package}{92}{subparagraph*.1642}
+\contentsline {subparagraph}{Submodules}{92}{subparagraph*.1643}
+\contentsline {subparagraph}{Module contents}{94}{subparagraph*.1661}
+\contentsline {subparagraph}{simses.system.thermal.model package}{94}{subparagraph*.1662}
+\contentsline {subparagraph}{Submodules}{94}{subparagraph*.1663}
+\contentsline {subparagraph}{Module contents}{97}{subparagraph*.1723}
+\contentsline {subparagraph}{simses.system.thermal.solar\_irradiation package}{97}{subparagraph*.1724}
+\contentsline {subparagraph}{Submodules}{97}{subparagraph*.1725}
+\contentsline {subparagraph}{Module contents}{99}{subparagraph*.1752}
+\contentsline {subparagraph}{Module contents}{99}{subparagraph*.1753}
+\contentsline {subsubsection}{Submodules}{99}{subsubsection*.1754}
+\contentsline {subsubsection}{Module contents}{101}{subsubsection*.1800}
+\contentsline {section}{\numberline {2.4}Logic}{101}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}simses.logic package}{101}{subsection.2.4.1}
+\contentsline {subsubsection}{Subpackages}{101}{subsubsection*.1801}
+\contentsline {paragraph}{simses.logic.energy\_management package}{101}{paragraph*.1802}
+\contentsline {subparagraph}{Subpackages}{101}{subparagraph*.1803}
+\contentsline {subparagraph}{simses.logic.energy\_management.strategy package}{102}{subparagraph*.1804}
+\contentsline {subparagraph}{Subpackages}{102}{subparagraph*.1805}
+\contentsline {subparagraph}{simses.logic.energy\_management.strategy.basic package}{102}{subparagraph*.1806}
+\contentsline {subparagraph}{Submodules}{102}{subparagraph*.1807}
+\contentsline {subparagraph}{Module contents}{105}{subparagraph*.1865}
+\contentsline {subparagraph}{simses.logic.energy\_management.strategy.serial package}{105}{subparagraph*.1866}
+\contentsline {subparagraph}{Submodules}{105}{subparagraph*.1867}
+\contentsline {subparagraph}{Module contents}{105}{subparagraph*.1868}
+\contentsline {subparagraph}{simses.logic.energy\_management.strategy.stacked package}{105}{subparagraph*.1869}
+\contentsline {subparagraph}{Submodules}{105}{subparagraph*.1870}
+\contentsline {subparagraph}{Module contents}{105}{subparagraph*.1878}
+\contentsline {subparagraph}{Submodules}{105}{subparagraph*.1879}
+\contentsline {subparagraph}{Module contents}{106}{subparagraph*.1894}
+\contentsline {subparagraph}{Submodules}{106}{subparagraph*.1895}
+\contentsline {subparagraph}{Module contents}{107}{subparagraph*.1909}
+\contentsline {paragraph}{simses.logic.power\_distribution package}{107}{paragraph*.1910}
+\contentsline {subparagraph}{Submodules}{107}{subparagraph*.1911}
+\contentsline {subparagraph}{Module contents}{110}{subparagraph*.1947}
+\contentsline {paragraph}{simses.logic.test package}{110}{paragraph*.1948}
+\contentsline {subparagraph}{Submodules}{110}{subparagraph*.1949}
+\contentsline {subparagraph}{Module contents}{110}{subparagraph*.1969}
+\contentsline {subsubsection}{Module contents}{110}{subsubsection*.1970}
+\contentsline {section}{\numberline {2.5}Technology}{110}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}simses.technology package}{110}{subsection.2.5.1}
+\contentsline {subsubsection}{Subpackages}{110}{subsubsection*.1971}
+\contentsline {paragraph}{simses.technology.hydrogen package}{111}{paragraph*.1972}
+\contentsline {subparagraph}{Subpackages}{111}{subparagraph*.1973}
+\contentsline {subparagraph}{simses.technology.hydrogen.control package}{111}{subparagraph*.1974}
+\contentsline {subparagraph}{Subpackages}{111}{subparagraph*.1975}
+\contentsline {subparagraph}{simses.technology.hydrogen.control.pressure package}{111}{subparagraph*.1976}
+\contentsline {subparagraph}{Submodules}{111}{subparagraph*.1977}
+\contentsline {subparagraph}{Module contents}{112}{subparagraph*.1995}
+\contentsline {subparagraph}{simses.technology.hydrogen.control.thermal package}{112}{subparagraph*.1996}
+\contentsline {subparagraph}{Submodules}{112}{subparagraph*.1997}
+\contentsline {subparagraph}{Module contents}{113}{subparagraph*.2021}
+\contentsline {subparagraph}{Submodules}{113}{subparagraph*.2022}
+\contentsline {subparagraph}{Module contents}{113}{subparagraph*.2026}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer package}{113}{subparagraph*.2027}
+\contentsline {subparagraph}{Subpackages}{113}{subparagraph*.2028}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer.degradation package}{113}{subparagraph*.2029}
+\contentsline {subparagraph}{Subpackages}{113}{subparagraph*.2030}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer.degradation.calendar package}{113}{subparagraph*.2031}
+\contentsline {subparagraph}{Submodules}{114}{subparagraph*.2032}
+\contentsline {subparagraph}{Module contents}{115}{subparagraph*.2057}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer.degradation.cyclic package}{115}{subparagraph*.2058}
+\contentsline {subparagraph}{Submodules}{115}{subparagraph*.2059}
+\contentsline {subparagraph}{Module contents}{117}{subparagraph*.2092}
+\contentsline {subparagraph}{Submodules}{117}{subparagraph*.2093}
+\contentsline {subparagraph}{Module contents}{118}{subparagraph*.2112}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer.pressure package}{118}{subparagraph*.2113}
+\contentsline {subparagraph}{Submodules}{118}{subparagraph*.2114}
+\contentsline {subparagraph}{Module contents}{119}{subparagraph*.2152}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer.stack package}{119}{subparagraph*.2153}
+\contentsline {subparagraph}{Subpackages}{119}{subparagraph*.2154}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer.stack.alkaline package}{119}{subparagraph*.2155}
+\contentsline {subparagraph}{Submodules}{119}{subparagraph*.2156}
+\contentsline {subparagraph}{Module contents}{122}{subparagraph*.2214}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer.stack.pem\_analytic package}{122}{subparagraph*.2215}
+\contentsline {subparagraph}{Submodules}{122}{subparagraph*.2216}
+\contentsline {subparagraph}{Module contents}{125}{subparagraph*.2303}
+\contentsline {subparagraph}{Submodules}{125}{subparagraph*.2304}
+\contentsline {subparagraph}{Module contents}{128}{subparagraph*.2368}
+\contentsline {subparagraph}{simses.technology.hydrogen.electrolyzer.thermal package}{128}{subparagraph*.2369}
+\contentsline {subparagraph}{Submodules}{128}{subparagraph*.2370}
+\contentsline {subparagraph}{Module contents}{130}{subparagraph*.2411}
+\contentsline {subparagraph}{Submodules}{130}{subparagraph*.2412}
+\contentsline {subparagraph}{Module contents}{130}{subparagraph*.2426}
+\contentsline {subparagraph}{simses.technology.hydrogen.fuel\_cell package}{130}{subparagraph*.2427}
+\contentsline {subparagraph}{Subpackages}{130}{subparagraph*.2428}
+\contentsline {subparagraph}{simses.technology.hydrogen.fuel\_cell.pressure package}{130}{subparagraph*.2429}
+\contentsline {subparagraph}{Submodules}{131}{subparagraph*.2430}
+\contentsline {subparagraph}{Module contents}{131}{subparagraph*.2446}
+\contentsline {subparagraph}{simses.technology.hydrogen.fuel\_cell.stack package}{131}{subparagraph*.2447}
+\contentsline {subparagraph}{Submodules}{131}{subparagraph*.2448}
+\contentsline {subparagraph}{Module contents}{133}{subparagraph*.2495}
+\contentsline {subparagraph}{simses.technology.hydrogen.fuel\_cell.thermal package}{133}{subparagraph*.2496}
+\contentsline {subparagraph}{Submodules}{133}{subparagraph*.2497}
+\contentsline {subparagraph}{Module contents}{134}{subparagraph*.2520}
+\contentsline {subparagraph}{Submodules}{134}{subparagraph*.2521}
+\contentsline {subparagraph}{Module contents}{135}{subparagraph*.2534}
+\contentsline {subparagraph}{simses.technology.hydrogen.hydrogen\_storage package}{135}{subparagraph*.2535}
+\contentsline {subparagraph}{Subpackages}{135}{subparagraph*.2536}
+\contentsline {subparagraph}{simses.technology.hydrogen.hydrogen\_storage.pipeline package}{135}{subparagraph*.2537}
+\contentsline {subparagraph}{Submodules}{135}{subparagraph*.2538}
+\contentsline {subparagraph}{Module contents}{136}{subparagraph*.2552}
+\contentsline {subparagraph}{simses.technology.hydrogen.hydrogen\_storage.pressuretank package}{136}{subparagraph*.2553}
+\contentsline {subparagraph}{Submodules}{136}{subparagraph*.2554}
+\contentsline {subparagraph}{Module contents}{136}{subparagraph*.2561}
+\contentsline {subparagraph}{Submodules}{136}{subparagraph*.2562}
+\contentsline {subparagraph}{Module contents}{137}{subparagraph*.2571}
+\contentsline {subparagraph}{simses.technology.hydrogen.test package}{137}{subparagraph*.2572}
+\contentsline {subparagraph}{Submodules}{137}{subparagraph*.2573}
+\contentsline {subparagraph}{Module contents}{137}{subparagraph*.2582}
+\contentsline {subparagraph}{Submodules}{137}{subparagraph*.2583}
+\contentsline {subparagraph}{Module contents}{138}{subparagraph*.2602}
+\contentsline {paragraph}{simses.technology.lithium\_ion package}{138}{paragraph*.2603}
+\contentsline {subparagraph}{Subpackages}{138}{subparagraph*.2604}
+\contentsline {subparagraph}{simses.technology.lithium\_ion.battery\_management\_system package}{138}{subparagraph*.2605}
+\contentsline {subparagraph}{Submodules}{138}{subparagraph*.2606}
+\contentsline {subparagraph}{Module contents}{139}{subparagraph*.2610}
+\contentsline {subparagraph}{simses.technology.lithium\_ion.cell package}{139}{subparagraph*.2611}
+\contentsline {subparagraph}{Submodules}{139}{subparagraph*.2612}
+\contentsline {subparagraph}{Module contents}{144}{subparagraph*.2690}
+\contentsline {subparagraph}{simses.technology.lithium\_ion.degradation package}{144}{subparagraph*.2691}
+\contentsline {subparagraph}{Subpackages}{144}{subparagraph*.2692}
+\contentsline {subparagraph}{simses.technology.lithium\_ion.degradation.calendar package}{144}{subparagraph*.2693}
+\contentsline {subparagraph}{Submodules}{144}{subparagraph*.2694}
+\contentsline {subparagraph}{Module contents}{147}{subparagraph*.2752}
+\contentsline {subparagraph}{simses.technology.lithium\_ion.degradation.cyclic package}{147}{subparagraph*.2753}
+\contentsline {subparagraph}{Submodules}{147}{subparagraph*.2754}
+\contentsline {subparagraph}{Module contents}{150}{subparagraph*.2812}
+\contentsline {subparagraph}{Submodules}{150}{subparagraph*.2813}
+\contentsline {subparagraph}{Module contents}{152}{subparagraph*.2835}
+\contentsline {subparagraph}{simses.technology.lithium\_ion.equivalent\_circuit\_model package}{152}{subparagraph*.2836}
+\contentsline {subparagraph}{Submodules}{152}{subparagraph*.2837}
+\contentsline {subparagraph}{Module contents}{152}{subparagraph*.2845}
+\contentsline {subparagraph}{simses.technology.lithium\_ion.test package}{152}{subparagraph*.2846}
+\contentsline {subparagraph}{Submodules}{152}{subparagraph*.2847}
+\contentsline {subparagraph}{Module contents}{153}{subparagraph*.2862}
+\contentsline {subparagraph}{Submodules}{153}{subparagraph*.2863}
+\contentsline {subparagraph}{Module contents}{155}{subparagraph*.2904}
+\contentsline {paragraph}{simses.technology.redox\_flow package}{155}{paragraph*.2905}
+\contentsline {subparagraph}{Subpackages}{155}{subparagraph*.2906}
+\contentsline {subparagraph}{simses.technology.redox\_flow.degradation package}{155}{subparagraph*.2907}
+\contentsline {subparagraph}{Submodules}{155}{subparagraph*.2908}
+\contentsline {subparagraph}{Module contents}{156}{subparagraph*.2925}
+\contentsline {subparagraph}{simses.technology.redox\_flow.electrochemical package}{156}{subparagraph*.2926}
+\contentsline {subparagraph}{Subpackages}{156}{subparagraph*.2927}
+\contentsline {subparagraph}{simses.technology.redox\_flow.electrochemical.control package}{156}{subparagraph*.2928}
+\contentsline {subparagraph}{Submodules}{156}{subparagraph*.2929}
+\contentsline {subparagraph}{Module contents}{159}{subparagraph*.2941}
+\contentsline {subparagraph}{Submodules}{159}{subparagraph*.2942}
+\contentsline {subparagraph}{Module contents}{159}{subparagraph*.2950}
+\contentsline {subparagraph}{simses.technology.redox\_flow.pump\_algorithm package}{159}{subparagraph*.2951}
+\contentsline {subparagraph}{Submodules}{159}{subparagraph*.2952}
+\contentsline {subparagraph}{Module contents}{162}{subparagraph*.2991}
+\contentsline {subparagraph}{simses.technology.redox\_flow.stack package}{162}{subparagraph*.2992}
+\contentsline {subparagraph}{Subpackages}{162}{subparagraph*.2993}
+\contentsline {subparagraph}{simses.technology.redox\_flow.stack.electrolyte package}{162}{subparagraph*.2994}
+\contentsline {subparagraph}{Submodules}{162}{subparagraph*.2995}
+\contentsline {subparagraph}{Module contents}{165}{subparagraph*.3022}
+\contentsline {subparagraph}{Submodules}{165}{subparagraph*.3023}
+\contentsline {subparagraph}{Module contents}{171}{subparagraph*.3121}
+\contentsline {subparagraph}{simses.technology.redox\_flow.test package}{171}{subparagraph*.3122}
+\contentsline {subparagraph}{Submodules}{171}{subparagraph*.3123}
+\contentsline {subparagraph}{Module contents}{171}{subparagraph*.3130}
+\contentsline {subparagraph}{Submodules}{171}{subparagraph*.3131}
+\contentsline {subparagraph}{Module contents}{175}{subparagraph*.3159}
+\contentsline {subsubsection}{Submodules}{175}{subsubsection*.3160}
+\contentsline {subsubsection}{Module contents}{176}{subsubsection*.3173}
+\contentsline {section}{\numberline {2.6}Data}{176}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}simses.data package}{176}{subsection.2.6.1}
+\contentsline {subsubsection}{Subpackages}{176}{subsubsection*.3174}
+\contentsline {paragraph}{simses.data.electrolyzer package}{176}{paragraph*.3175}
+\contentsline {subparagraph}{Subpackages}{176}{subparagraph*.3176}
+\contentsline {subparagraph}{simses.data.electrolyzer.evaluation package}{176}{subparagraph*.3177}
+\contentsline {subparagraph}{Submodules}{176}{subparagraph*.3178}
+\contentsline {subparagraph}{Module contents}{176}{subparagraph*.3179}
+\contentsline {subparagraph}{simses.data.electrolyzer.lookuptable package}{176}{subparagraph*.3180}
+\contentsline {subparagraph}{Subpackages}{176}{subparagraph*.3181}
+\contentsline {subparagraph}{simses.data.electrolyzer.lookuptable.archive package}{176}{subparagraph*.3182}
+\contentsline {subparagraph}{Submodules}{176}{subparagraph*.3183}
+\contentsline {subparagraph}{Module contents}{176}{subparagraph*.3184}
+\contentsline {subparagraph}{simses.data.electrolyzer.lookuptable.ui\_curves package}{177}{subparagraph*.3185}
+\contentsline {subparagraph}{Subpackages}{177}{subparagraph*.3186}
+\contentsline {subparagraph}{simses.data.electrolyzer.lookuptable.ui\_curves.activation\_overpotential\_alkaline package}{177}{subparagraph*.3187}
+\contentsline {subparagraph}{Module contents}{177}{subparagraph*.3188}
+\contentsline {subparagraph}{simses.data.electrolyzer.lookuptable.ui\_curves.general\_alkaline package}{177}{subparagraph*.3189}
+\contentsline {subparagraph}{Module contents}{177}{subparagraph*.3190}
+\contentsline {subparagraph}{simses.data.electrolyzer.lookuptable.ui\_curves.stuart\_hri package}{177}{subparagraph*.3191}
+\contentsline {subparagraph}{Module contents}{177}{subparagraph*.3192}
+\contentsline {subparagraph}{Module contents}{177}{subparagraph*.3193}
+\contentsline {subparagraph}{Submodules}{177}{subparagraph*.3194}
+\contentsline {subparagraph}{Module contents}{177}{subparagraph*.3203}
+\contentsline {subparagraph}{simses.data.electrolyzer.parameters package}{177}{subparagraph*.3204}
+\contentsline {subparagraph}{Module contents}{177}{subparagraph*.3205}
+\contentsline {subparagraph}{simses.data.electrolyzer.regression package}{177}{subparagraph*.3206}
+\contentsline {subparagraph}{Submodules}{177}{subparagraph*.3207}
+\contentsline {subparagraph}{Module contents}{177}{subparagraph*.3208}
+\contentsline {subparagraph}{Module contents}{178}{subparagraph*.3209}
+\contentsline {paragraph}{simses.data.energy\_management package}{178}{paragraph*.3210}
+\contentsline {subparagraph}{Module contents}{178}{subparagraph*.3211}
+\contentsline {paragraph}{simses.data.fuel\_cell package}{178}{paragraph*.3212}
+\contentsline {subparagraph}{Submodules}{178}{subparagraph*.3213}
+\contentsline {subparagraph}{Module contents}{179}{subparagraph*.3227}
+\contentsline {paragraph}{simses.data.lithium\_ion package}{179}{paragraph*.3228}
+\contentsline {subparagraph}{Subpackages}{179}{subparagraph*.3229}
+\contentsline {subparagraph}{simses.data.lithium\_ion.cell package}{179}{subparagraph*.3230}
+\contentsline {subparagraph}{Module contents}{179}{subparagraph*.3231}
+\contentsline {subparagraph}{Module contents}{179}{subparagraph*.3232}
+\contentsline {paragraph}{simses.data.logo package}{179}{paragraph*.3233}
+\contentsline {subparagraph}{Module contents}{179}{subparagraph*.3234}
+\contentsline {paragraph}{simses.data.power\_electronics package}{179}{paragraph*.3235}
+\contentsline {subparagraph}{Module contents}{179}{subparagraph*.3236}
+\contentsline {paragraph}{simses.data.profile package}{179}{paragraph*.3237}
+\contentsline {subparagraph}{Subpackages}{179}{subparagraph*.3238}
+\contentsline {subparagraph}{simses.data.profile.economic package}{179}{subparagraph*.3239}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3240}
+\contentsline {subparagraph}{simses.data.profile.power package}{180}{subparagraph*.3241}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3242}
+\contentsline {subparagraph}{simses.data.profile.technical package}{180}{subparagraph*.3243}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3244}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3245}
+\contentsline {paragraph}{simses.data.pump package}{180}{paragraph*.3246}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3247}
+\contentsline {paragraph}{simses.data.redox\_flow package}{180}{paragraph*.3248}
+\contentsline {subparagraph}{Subpackages}{180}{subparagraph*.3249}
+\contentsline {subparagraph}{simses.data.redox\_flow.degradation package}{180}{subparagraph*.3250}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3251}
+\contentsline {subparagraph}{simses.data.redox\_flow.stack package}{180}{subparagraph*.3252}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3253}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3254}
+\contentsline {paragraph}{simses.data.thermal package}{180}{paragraph*.3255}
+\contentsline {subparagraph}{Module contents}{180}{subparagraph*.3256}
+\contentsline {subsubsection}{Module contents}{180}{subsubsection*.3257}
+\contentsline {section}{\numberline {2.7}Analysis}{180}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}simses.analysis package}{181}{subsection.2.7.1}
+\contentsline {subsubsection}{Subpackages}{181}{subsubsection*.3258}
+\contentsline {paragraph}{simses.analysis.data package}{181}{paragraph*.3259}
+\contentsline {subparagraph}{Submodules}{181}{subparagraph*.3260}
+\contentsline {subparagraph}{Module contents}{189}{subparagraph*.3500}
+\contentsline {paragraph}{simses.analysis.evaluation package}{189}{paragraph*.3501}
+\contentsline {subparagraph}{Subpackages}{189}{subparagraph*.3502}
+\contentsline {subparagraph}{simses.analysis.evaluation.economic package}{189}{subparagraph*.3503}
+\contentsline {subparagraph}{Subpackages}{189}{subparagraph*.3504}
+\contentsline {subparagraph}{simses.analysis.evaluation.economic.revenue\_stream package}{190}{subparagraph*.3505}
+\contentsline {subparagraph}{Submodules}{190}{subparagraph*.3506}
+\contentsline {subparagraph}{Module contents}{192}{subparagraph*.3554}
+\contentsline {subparagraph}{Submodules}{192}{subparagraph*.3555}
+\contentsline {subparagraph}{Module contents}{193}{subparagraph*.3561}
+\contentsline {subparagraph}{simses.analysis.evaluation.plotting package}{193}{subparagraph*.3562}
+\contentsline {subparagraph}{Submodules}{193}{subparagraph*.3563}
+\contentsline {subparagraph}{Module contents}{196}{subparagraph*.3642}
+\contentsline {subparagraph}{simses.analysis.evaluation.technical package}{196}{subparagraph*.3643}
+\contentsline {subparagraph}{Submodules}{196}{subparagraph*.3644}
+\contentsline {subparagraph}{Module contents}{201}{subparagraph*.3754}
+\contentsline {subparagraph}{Submodules}{201}{subparagraph*.3755}
+\contentsline {subparagraph}{Module contents}{206}{subparagraph*.3884}
+\contentsline {paragraph}{simses.analysis.test package}{206}{paragraph*.3885}
+\contentsline {subparagraph}{Submodules}{206}{subparagraph*.3886}
+\contentsline {subparagraph}{Module contents}{207}{subparagraph*.3925}
+\contentsline {subsubsection}{Submodules}{207}{subsubsection*.3926}
+\contentsline {subsubsection}{Module contents}{208}{subsubsection*.3943}
+\contentsline {chapter}{Python Module Index}{209}{section*.3944}
